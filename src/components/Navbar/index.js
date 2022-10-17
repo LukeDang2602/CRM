@@ -11,9 +11,15 @@ return (
 		<NavLink to='/' activeStyle>
 			Home
 		</NavLink>
-		<NavLink to='/Customer' activeStyle>
+
+		<NavLink to='/createCustomer' activeStyle>
 			Create Customer
 		</NavLink>
+
+		<NavLink to='/customerList' activeStyle>
+			Customers List
+		</NavLink>
+
 		</NavMenu>
 		<NavBtn>
 		<NavBtnLink to='/signin'>Sign In</NavBtnLink>
