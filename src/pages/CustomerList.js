@@ -31,7 +31,7 @@ function CustomerList() {
   
 	return (
 	  <div className="App">
-  		<div><h1>Customer List: </h1></div>
+  		<div><h1>Customer List </h1></div>
 		  <label>Name</label>
 		  <label>Address</label>
 		  <label>Phone</label>

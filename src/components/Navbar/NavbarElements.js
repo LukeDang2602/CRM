@@ -68,7 +68,7 @@ width: 100vw; */
 
 export const NavBtnLink = styled(Link)`
 border-radius: 4px;
-background: #808080;
+background: orange;
 padding: 10px 22px;
 color: #000000;
 outline: none;
