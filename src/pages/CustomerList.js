@@ -31,29 +31,35 @@ function CustomerList() {
   
 	return (
 	  <div className="App">
-  
+  		<div><h1>Customer List: </h1></div>
+		  <label>Name</label>
+		  <label>Address</label>
+		  <label>Phone</label>
+		  <label>Email</label>
+
 	   {users.map((user) => {
 		return ( 
 		<div> 
-		<div><h1>Customer Lists: </h1></div>
-		  {" "}
-		  <h2>Name: {user.name}</h2>
-		  <h2>Address: {user.address}</h2>
-		  <h2>Phone: {user.phone}</h2>
-		  <h2>Email: {user.email}</h2>
-		  
+		{" "}  
+		<div>
+		  <customer>{user.name}</customer>
+		  <customer>{user.address}</customer>
+		  <customer>{user.phone}</customer>
+		  <customer>{user.email}</customer> 
+		  <button onClick={
+			() => {deleteUser(user.id)}}>
+			Delete User
+		  </button>
+		</div>
+
 		  {/* <button 
 			onClick={() => {
 			  updateUser(user.id, user.address, user.phone, user.email)
 			}}>
 			{" "}
 			Increase Age
-		  </button> */}
-  
-		  <button onClick={
-			() => {deleteUser(user.id)}}>
-			Delete User
-		  </button>
+		  </button> */}		
+		  
 		</div>
 		
 		);

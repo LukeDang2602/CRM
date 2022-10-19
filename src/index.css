@@ -13,8 +13,17 @@ code {
 }
 
 label {
+  font-family: verdana;
+  font-size: 20px;
+  font-weight: bold;
   display: inline-block;
   width: 150px;
-  text-align: right;
+  text-align: left;
+}
+
+customer {
+  display: inline-block;
+  width: 150px;
+  text-align: center;
 }
 
