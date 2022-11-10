@@ -44,7 +44,7 @@ function Customers() {
   
 	return (
 	  <div className="App">
-		<div><h1>Create Customer :)</h1></div>
+		<div><h1>Create Customer</h1></div>
 		<div>
 			<input placeHolder ="Name..." 
 				onChange={(event) => {

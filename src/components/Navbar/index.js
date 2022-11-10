@@ -8,21 +8,24 @@ return (
 		<Bars />
 
 		<NavMenu>
-		<NavLink to='/' activeStyle>
-			Home
-		</NavLink>
+			<NavLink to='/' activeStyle>
+				Home
+			</NavLink>
 
-		<NavLink to='/createCustomer' activeStyle>
-			Create Customer
-		</NavLink>
+			<NavLink to='/createCustomer' activeStyle>
+				Create Customer
+			</NavLink>
 
-		<NavLink to='/customerList' activeStyle>
-			Customers List
-		</NavLink>
+			<NavLink to='/customerList' activeStyle>
+				Customers List
+			</NavLink>		
 
+			<NavLink to='/createTask' activeStyle>
+				 Create Task
+			</NavLink>
 		</NavMenu>
 		<NavBtn>
-		<NavBtnLink to='/signin'>Sign In</NavBtnLink>
+			<NavBtnLink to='/signin'>Sign In</NavBtnLink>
 		</NavBtn>
 	</Nav>
 	</>
