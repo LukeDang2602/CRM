@@ -10,10 +10,6 @@ export default function CreateTask() {
     const dateRef = useRef();
     const [priority,setPriority] = useState("");
     const priorityRef = useRef();
-    const [status,setStatus] = useState("");
-    const statusRef = useRef();
-    const [customer, setCustomer] = useState("");
-    const customerRef = useRef();
 
     //get task collection from firestore database
     const taskCollectionRef = collection(db, "tasks");
@@ -34,10 +30,8 @@ export default function CreateTask() {
             //clear inputs
             taskRef.current.value = null;
             dateRef.current.value = null;
-            //statusRef.current.value = null;
             priorityRef.current.value = null;
-            //customerRef.current.value = null;
-            
+
             //clear states
             setTask("");
             setDate("");
