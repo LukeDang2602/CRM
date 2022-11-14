@@ -1,5 +1,5 @@
 import React from 'react'
-import './App.css';
+import './styles/App.css';
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
@@ -10,7 +10,7 @@ import CreateTask from './pages/CreateTask';
 function App() {
 
   return (
-    <div className="App">
+    <div id="wrapper" className="App">
       <Router>
         <Navbar />
         <Routes>

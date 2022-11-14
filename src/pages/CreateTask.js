@@ -56,7 +56,6 @@ export default function CreateTask() {
                         <option value="Medium Priority">Medium Priority</option>
                         <option value="High Priority">High Priority</option>
                 </select>
-
                 <br/><br/>
                 <button type="button" onClick={handleCreateTask}>Submit</button>
             </form>
