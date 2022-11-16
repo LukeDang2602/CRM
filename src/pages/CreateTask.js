@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { collection, addDoc } from 'firebase/firestore';
 import { db } from '../firebase-config';
+import '../styles/createTask.css';
 
 export default function CreateTask() {
     //declare states
@@ -44,14 +45,15 @@ export default function CreateTask() {
     };
 
     return(
-        <div>
-            <h1>Create a task</h1>    
-            <form>
-                <input placeholder='Task...' ref={taskRef} onChange={e => {setTask(e.target.value);}}/> 
-                <br/>
-                <input type='Date' ref={dateRef} onChange={e => {setDate(e.target.value)}}/>
-                <br/>
-                <select name="priority" ref={priorityRef} onChange={e => {setPriority(e.target.value)}}>
+        <div class="formDiv">
+            <h1>Create a task</h1>   
+            <form class="taskForm">
+                <text class="formLabels">Task</text><br/>
+                <input class="input" placeholder='Enter a task' ref={taskRef} onChange={e => {setTask(e.target.value);}}/> 
+                <br/><text class="formLabels">Date</text><br/>
+                <input class="input" type='Date' ref={dateRef} onChange={e => {setDate(e.target.value)}}/>
+                <br/><text class="formLabels">Priority</text><br/>
+                <select class="input" name="priority" ref={priorityRef} onChange={e => {setPriority(e.target.value)}}>
                         <option value="Low Priorty">Low Priority</option>
                         <option value="Medium Priority">Medium Priority</option>
                         <option value="High Priority">High Priority</option>
