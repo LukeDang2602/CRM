@@ -76,30 +76,6 @@ function Customers() {
 		<button onClick={createUser}>Create User</button>
   
 	   {users.map((user) => {
-		return ( 
-		<div> 
-		  {/* {" "}
-		  <h1>Name: {user.name}</h1>
-		  <h1>Address: {user.address}</h1>
-		  <h1>Phone: {user.phone}</h1>
-		  <h1>Email: {user.email}</h1> */}
-		  
-		  {/* <button 
-			onClick={() => {
-			  updateUser(user.id, user.address, user.phone, user.email)
-			}}>
-			{" "}
-			Increase Age
-		  </button> */}
-  
-		  {/* <button onClick={
-			() => {deleteUser(user.id)}}>
-			Delete User
-		  </button> */}
-
-		</div>
-		
-		);
 	  })}
 	  </div>
 	  

@@ -23,6 +23,11 @@ return (
 			<NavLink to='/createTask' activeStyle>
 				 Create Task
 			</NavLink>
+
+			{/* <NavLink to='/taskList' activeStyle>
+				 Tasks List
+			</NavLink> */}
+			
 		</NavMenu>
 		<NavBtn>
 			<NavBtnLink to='/signin'>Sign In</NavBtnLink>

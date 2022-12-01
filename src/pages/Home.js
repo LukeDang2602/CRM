@@ -1,6 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import "../styles/home.css"
+import TaskList from './TaskList';
 const Home = () => {
 	
 
@@ -11,6 +12,7 @@ const Home = () => {
 			</div>
 			<div class="homeDiv">
 				<label class="divLabel">Tasks</label>
+				<TaskList />
 			</div>
 
 		

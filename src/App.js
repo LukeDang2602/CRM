@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import Customers from './pages/Customers';
 import CustomerList from './pages/CustomerList';
 import CreateTask from './pages/CreateTask';
+import TaskList from './pages/TaskList';
 
 function App() {
 
@@ -17,7 +18,11 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/createCustomer' element={<Customers />} />
           <Route path='/customerList' element={<CustomerList />} />
-          <Route path='/CreateTask' element={<CreateTask/>}/> 
+          <Route path='/createTask' element={<CreateTask />}/> 
+          {/* We can make tasks list it's own page if we want
+              I have commented it out here and in the Navbar index
+           <Route path='/taskList' element={<TaskList />}/> */
+          }
         </Routes>
       </Router>
     </div>

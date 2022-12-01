@@ -29,3 +29,8 @@ customer {
   text-align: center;
 }
 
+task {
+  display: inline-block;
+  width: 150px;
+  text-align: center;
+}
