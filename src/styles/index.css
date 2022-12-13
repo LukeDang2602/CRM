@@ -21,16 +21,33 @@ label {
   display: inline-block;
   width: 150px;
   text-align: left;
+  margin-right: 10px;
 }
 
 customer {
   display: inline-block;
+  height: 30px;
   width: 150px;
   text-align: center;
 }
 
 task {
-  display: inline-block;
+  display: inline-flex;
   width: 150px;
-  text-align: center;
+  text-align: left;
+  margin-left: 10px;
+}
+
+.customerList{
+  background: white;
+  display: block;
+  width: 60%;
+  height: auto;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  justify-content: center;
+  border-radius: 10px; 
+  border: 1px solid ghostwhite;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;   
 }

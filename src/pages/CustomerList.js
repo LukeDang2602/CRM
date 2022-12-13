@@ -38,7 +38,7 @@ function CustomerList() {
 	}, [])
   
 	return (
-	  <div className="formDiv">
+	  <div className="customerList">
 					<label>Name</label>
 					<label>Address</label>
 					<label>Phone</label>
