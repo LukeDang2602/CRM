@@ -1,5 +1,5 @@
-import React, { useState, useRef } from 'react';
-import { collection, addDoc } from 'firebase/firestore';
+import React, { useState, useRef, useEffect } from 'react';
+import { collection, addDoc, getDocs, query, orderBy } from 'firebase/firestore';
 import { db } from '../firebase-config';
 import '../styles/createTask.css';
 
@@ -11,9 +11,24 @@ export default function CreateTask() {
     const dateRef = useRef();
     const [priority,setPriority] = useState("");
     const priorityRef = useRef();
+    const [customer,setCustomer] = useState("");
+    const customerRef = useRef();
+
+    const [users, setUsers] = useState([]);
+	const usersCollectionRef = collection(db, "users");
 
     //get task collection from firestore database
     const taskCollectionRef = collection(db, "tasks");
+
+    useEffect(() => {
+	  
+        const getUsers = async () => {
+        const data = await getDocs(query(usersCollectionRef, orderBy('name')));
+            setUsers(data.docs.map((doc) => ({...doc.data(), id: doc.id})))
+        }
+    
+        getUsers()
+      }, [])
     
     async function handleCreateTask(){
 
@@ -24,7 +39,7 @@ export default function CreateTask() {
                 date: date,
                 status: "",
                 priority: priority,
-                customer: ""
+                customer: customer
             });
             console.log("Document wrritten with ID: ", docRef.id);
             
@@ -32,11 +47,13 @@ export default function CreateTask() {
             taskRef.current.value = null;
             dateRef.current.value = null;
             priorityRef.current.value = null;
+            customerRef.current.value = null;
 
             //clear states
             setTask("");
             setDate("");
             setPriority("");
+            setCustomer("");
 
         }catch(e){
             console.error("Error adding document: ", e);
@@ -44,10 +61,23 @@ export default function CreateTask() {
         
     };
 
+    
+
     return(
         <div class="formDiv">
             <h1>Create a task</h1>   
             <form class="taskForm">
+                <text class="formLabels">Customers</text><br/>
+                <select class="input" name="Customer" ref={customerRef} onChange={e => {setCustomer(e.target.value)}}>
+                    {users.map((user) => {
+                        return (
+                            <option>
+                            <customer>{user.name}</customer>
+                            </option> 
+                        );
+                    })}
+                </select>
+                <br/>
                 <text class="formLabels">Task</text><br/>
                 <input class="input" placeholder='Enter a task' ref={taskRef} onChange={e => {setTask(e.target.value);}}/> 
                 <br/><text class="formLabels">Date</text><br/>

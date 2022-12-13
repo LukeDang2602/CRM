@@ -1,3 +1,4 @@
+//Create customer component
 import React from 'react'
 import { useState, useEffect } from 'react';
 import { db } from '../firebase-config'
@@ -19,6 +20,7 @@ function Customers() {
 		phone: newPhone,
 		email: newEmail
 	});
+		window.location.reload();
 	};
   
 	const updateUser = async (id, age) => {
@@ -43,42 +45,29 @@ function Customers() {
 	}, [])
   
 	return (
-	  <div className="App">
-		<div><h1>Create Customer</h1></div>
-		<div>
-			<input placeHolder ="Name..." 
-				onChange={(event) => {
-				setNewName(event.target.value);
-			}}/>
-		</div>
-
-		<div>
-			<input placeHolder ="Address..." 
-				onChange={(event) => {
-				setNewAddress(event.target.value);
-			}}/>
-		</div>
-
-		<div>
-			<input placeHolder ="Phone..." 
-				onChange={(event) => {
-				setNewPhone(event.target.value);
-			}}/>
-		</div>
-
-		<div>
-			<input placeHolder ="Email..." 
-				onChange={(event) => {
-				setNewEmail(event.target.value);
-			}}/>
-		</div>
-		
-		<button onClick={createUser}>Create User</button>
-  
-	   {users.map((user) => {
-	  })}
-	  </div>
-	  
+		<div class="formDiv">
+            <h1>Create a customer</h1>   
+            <form class="taskForm">
+							<input class="input" 
+							placeholder='Name...'
+							onChange={e => {setNewName(e.target.value);}}/>
+						<br/>
+							<input class="input"
+							placeholder='Address...'
+							onChange={e => {setNewAddress(e.target.value);}}/>
+						<br/>
+							<input class="input"
+							placeholder='Phone...' 
+							onChange={e => {setNewPhone(e.target.value);}}/>
+						<br/>
+							<input class="input"
+							placeholder='Email...'
+							onChange={e => {setNewEmail(e.target.value);}}/>
+						<br/>
+						<br/>
+            </form>
+						<button type="button" onClick={createUser}>Create User</button>
+        </div>	  
 	);
 }
 
